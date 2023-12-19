@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GetChannel } from '../../models/GetChannel.model';
 import { CommonModule } from '@angular/common';
+import { ChannelService } from '../../services/channel.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-list-channel',
@@ -9,38 +11,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list-channel.component.html',
   styleUrl: './list-channel.component.css'
 })
-export class ListChannelComponent {
+export class ListChannelComponent implements OnInit {
 
-  channel : GetChannel[] = [
-    {
-      id: 0,
-      name: "general",
-      dateCreation: "2023-12-19T14:09:25.797Z"
-    },
-    {
-      id: 1,
-      name: "test",
-      dateCreation: "2023-12-19T14:09:25.797Z"
-    },
-    {
-      id: 2,
-      name: "channel2",
-      dateCreation: "2023-12-19T14:09:25.797Z"
-    },
-    {
-      id: 3,
-      name: "hello",
-      dateCreation: "2023-12-19T14:09:25.797Z"
-    },
-    {
-      id: 4,
-      name: "prout",
-      dateCreation: "2023-12-19T14:09:25.797Z"
-    },
-  ]
+  constructor(public channelService : ChannelService, public userService : UserService) { }
 
-  
-  constructor() { }
+  ngOnInit(): void {
+    this.channelService.getAllChannels(this.userService.userConnect.username)
+  }
 
   evenement(channel : GetChannel) {
     console.log("événement click sur channel OK");
