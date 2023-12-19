@@ -1,1 +1,14 @@
-<p>add-channel works!</p>
+<form (ngSubmit)="onSubmit()" #orderForm="ngForm" id="formChannel">
+    <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="postChannel"
+          required
+          [(ngModel)]="newChannel.name"
+          name="postChannel"
+          placeholder="Nom de votre channel"
+        />
+      </div>
+      <button id="formChannelButton" type="submit" class="btn btn-primary">Créer le channel</button>
+</form>

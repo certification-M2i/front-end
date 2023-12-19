@@ -1,1 +1,3 @@
-<p>list-channel works!</p>
+<div *ngFor="let channel of this.channel">
+    <span class="pointer-cursor" (click)="evenement(channel)">#{{channel.name}}</span>
+</div>
