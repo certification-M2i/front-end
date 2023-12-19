@@ -1,3 +1,12 @@
-<div *ngFor="let channel of this.channelService.channelList">
-    <span class="pointer-cursor" (click)="evenement(channel)">#{{channel.name}}</span>
+<div *ngFor="let channel of this.channelService.channelList; let i = index">
+    <div *ngIf="editingIndex !== i; else editMode">
+        <span class="pointer-cursor" (click)="evenement(channel)">#{{channel.name}}</span>
+        <span class="pointer-cursor" *ngIf="channel.name !== 'Général'" (click)="startEditing(i)">Modifier</span>
+    </div>
+    <!-- ng-template permet d'avoir un rendu dynamique qui n'est pas rendu immédiatement, ici utilisé avec la directive ngIf. Lorsque ngIf est false, il va rechercher un template qui comporte editMode -->
+    <ng-template #editMode>
+        <input [(ngModel)]="channel.name" />
+        <button (click)="saveChanges(i, channel)" class="btn btn-primary">Sauvegarder</button>
+        <button (click)="cancelEditing()" class="btn btn-primary">Annuler</button>
+    </ng-template>
 </div>

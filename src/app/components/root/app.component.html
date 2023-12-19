@@ -1,5 +1,5 @@
 
-<app-header></app-header>
+<app-header *ngIf="this.userService.userConnect.username !== ''"></app-header>
 <div *ngIf="this.userService.userConnect.username !== ''">
     <app-list-channel></app-list-channel>
     <app-add-channel></app-add-channel>

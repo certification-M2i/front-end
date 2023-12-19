@@ -1,3 +1,14 @@
-<header>
-    <h1>Suika tchat !</h1>
+<header id="header">
+    <img id="logoApp" src="../../../assets/logo.png" alt="Logo de l'application représentant une pastèque"/>
+    <div>
+        <h1>Suika tchat !</h1>
+        <input
+          type="text"
+          class="form-control"
+          id="postChannel"
+          name="postChannel"
+          placeholder="rechercher un message"
+        />
+    </div>
+    <span>Connecté en tant que : {{ this.userService.userConnect.username }} 🟢</span>
 </header>
