@@ -13,8 +13,7 @@ export class ChannelService {
 
   private channelId : number = 0;
 
-  public messagesInChannel : GetMessagesInChannel[] = [] 
-  // public filterMessagesInChannel : GetMessagesInChannel[] = []
+  public messagesInChannel : GetMessagesInChannel[] = []
 
   constructor(private fetcher: FetcherService) { }
 
