@@ -5,7 +5,6 @@ import { GetChannel } from '../models/GetChannel.model';
 import { UpdateChannel } from '../models/UpdateChannel.model';
 import { User } from '../models/User.model';
 import { GetMessagesInChannel } from '../models/GetMessagesInChannel.model';
-import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
