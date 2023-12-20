@@ -10,9 +10,19 @@ import { User } from '../models/User.model';
 })
 export class ChannelService {
 
+  private channelId : number = 0;
+
   constructor(private fetcher: FetcherService) { }
 
   channelList: GetChannel[] = [];
+
+  setChannelId(id : number){
+    this.channelId = id;
+  }
+
+  getChannelId(){
+      return this.channelId;
+  }
 
   getAllChannels(username : string) {
     this.fetcher.getChannels(username).subscribe((data) => {
