@@ -1,14 +1,43 @@
-<header id="header">
-    <img id="logoApp" src="../../../assets/logo.png" alt="Logo de l'application représentant une pastèque"/>
-    <div>
-        <h1>Suika tchat !</h1>
-        <input
-          type="text"
-          class="form-control"
-          id="postChannel"
-          name="postChannel"
-          placeholder="rechercher un message"
+<header id="header" class="bg-dark p-3 shadow">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-md-2 col-12 text-center mb-3 mb-md-0">
+        <img
+          src="../../../assets/logo.png"
+          id="logoApp"
+          alt="Logo de l'application représentant une pastèque"
+          class="img-fluid"
         />
+      </div>
+      <div class="col-md-8 col-12 text-center">
+        <h1 class="m-0">Suika tchat !</h1>
+        <div class="d-flex justify-content-center">
+          <input
+            type="text"
+            class="form-control mt-2 w-50 w-md-50"
+            id="postChannel"
+            name="postChannel"
+            placeholder="Rechercher un message..."
+            (input)="search($event)"
+          />
+        </div>
+      </div>
+      <div class="col-md-2 col-12 text-center text-md-end mt-2 mr-md-2">
+        <span class="badge bg-success"
+          >Hello, {{ this.userService.userConnect.username }} ! 🖐️</span
+        >
+      </div>
     </div>
-    <span>Connecté en tant que : {{ this.userService.userConnect.username }} 🟢</span>
+  </div>
 </header>
+
+<div *ngIf="searchResults.length > 0" class="container mt-3">
+    <ul class="list-group">
+        <li *ngFor="let result of searchResults" class="list-group-item">
+            <h5 class="mb-1">Contenu : {{ result.content }}</h5>
+            <small>Par : {{ result.username }}</small>
+            <br>
+            <small class="text-muted">Le : {{ result.sendingDate }}</small>
+        </li>
+    </ul>
+</div>

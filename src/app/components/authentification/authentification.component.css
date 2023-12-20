@@ -1,0 +1,32 @@
+.authentification {
+  height: 100vh;
+  background: -webkit-linear-gradient(90deg, #176e10,#a99551,#e5454f);                         
+  background: linear-gradient(90deg, #176e10,#a99551,#e5454f);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+}
+
+.btn-authentification {
+  background-color: #176e10;
+  color: #fff;
+}
+
+.custom-width {
+  width: 50%; 
+  margin: 0 auto; /* Pour centrer l'input horizontalement */
+}
+
+#postUser {
+  background-color: #212529;
+  color: #fff;
+  border-color: #212529;
+}
+
+#postUser::placeholder {
+  color: grey; /* Changer la couleur du texte du placeholder */
+}
+
+/* Media query pour les petites tailles d'écran */
+@media (max-width: 768px) {
+  #postUser {
+    font-size: 0.8em; /* Taille de police réduite pour les écrans plus petits */
+  }
+}
