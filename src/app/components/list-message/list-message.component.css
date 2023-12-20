@@ -14,3 +14,11 @@
   padding-left:10px ;
   padding-right:10px ;
 }
+
+.message-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}

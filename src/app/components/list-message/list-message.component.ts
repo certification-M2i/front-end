@@ -1,10 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef, AfterViewChecked} from '@angular/core';
 import {MessageService} from "../../services/message.service";
-import {UserService} from "../../services/user.service";
 import {NgForOf} from "@angular/common";
 import {ChannelService} from "../../services/channel.service";
-import {GetMessagesInChannel} from '../../models/GetMessagesInChannel.model';
-import {MessagePost} from "../../models/MessagePost.model";
 
 @Component({
   selector: 'app-list-message',
@@ -15,18 +12,24 @@ import {MessagePost} from "../../models/MessagePost.model";
   templateUrl: './list-message.component.html',
   styleUrl: './list-message.component.css'
 })
-export class ListMessageComponent implements OnInit {
+export class ListMessageComponent implements OnInit, AfterViewChecked  {
 
-  // listMessage : GetMessagesInChannel[] = this.channelService.messagesInChannel
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
-
-  constructor(public channelService: ChannelService, public messageService: MessageService) {
+  constructor(public channelService: ChannelService, public messageService: MessageService) {}
+  
+  ngAfterViewChecked(): void {
+    this.scrollBottomPage();
   }
 
   ngOnInit(): void {
     console.log("init list message")
     console.log(this.channelService.getChannelId())
     this.channelService.getMessageInChannel(this.channelService.getChannelId())
+  }
+
+  private scrollBottomPage(): void {
+      this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
   }
 
 }
