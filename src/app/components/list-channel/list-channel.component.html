@@ -1,4 +1,4 @@
-<div *ngFor="let channel of this.channelService.channelList; let i = index">
+<div *ngFor="let channel of this.channelService.channelListFiltre; let i = index">
     <div *ngIf="editingIndex !== i; else editMode" class="my-2">
         <span (click)="evenement(channel)" class="pointer-cursor">
             #{{channel.name}}
@@ -15,3 +15,4 @@
         <span (click)="cancelEditing()" class="pointer-cursor">❌</span>
     </ng-template>
 </div>
+

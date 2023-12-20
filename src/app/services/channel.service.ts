@@ -32,6 +32,7 @@ export class ChannelService {
     this.fetcher.getChannels(username).subscribe((data) => {
       console.log(data)
       this.channelList = data;
+      this.ordonnerParOrdreCroissant();
     });
   }
 
@@ -65,10 +66,17 @@ export class ChannelService {
     return this.fetcher.removeUserFromChannel(channel, user);
   }
 
+
   searchInMessageChannel(search:string) : GetMessagesInChannel[] {
     return this.messagesInChannel.filter(message => 
       message.content.toLocaleLowerCase()
       .includes(search.toLocaleLowerCase()))
+    }
+
+  channelListFiltre: GetChannel[] = [];
+
+  ordonnerParOrdreCroissant() {
+    this.channelListFiltre = this.channelList.sort((a, b) => a.name.localeCompare(b.name));
   }
 }
 
