@@ -1,1 +1,14 @@
-<p>add-message works!</p>
+<form (ngSubmit)="onSubmit()" #orderForm="ngForm" id="formMessage">
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      id="postMessage"
+      required
+      [(ngModel)]="newMessage.content"
+      name="postMessage"
+      placeholder="Votre message"
+    />
+  </div>
+  <button id="formMessageButton" type="submit" class="btn btn-primary">Envoyer</button>
+</form>

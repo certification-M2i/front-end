@@ -1,1 +1,5 @@
-<p>list-message works!</p>
+<div (click)="channelService.getMessageInChannel(channelService.getChannelId())">
+<div *ngFor="let message of this.messageService.messageList; let i = index">
+    <p>{{message.content}}</p>
+</div>
+</div>
