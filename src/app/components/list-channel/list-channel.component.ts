@@ -18,7 +18,8 @@ export class ListChannelComponent implements OnInit {
   constructor(public channelService : ChannelService, public userService : UserService) { }
 
   ngOnInit(): void {
-    this.channelService.getAllChannels(this.userService.userConnect.username)
+    this.channelService.getAllChannels(this.userService.userConnect.username);
+    this.channelService.ordonnerParOrdreCroissant();
   }
 
   evenement(channel : GetChannel) {
