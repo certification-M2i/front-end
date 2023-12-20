@@ -8,13 +8,9 @@
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
-}
-
 #postChannel{
     width: 700px;
 }
-=======
 #postChannel {
     background-color: transparent;
     border-color: #176e10;
@@ -25,4 +21,3 @@
     color: #176e10; /* Changer la couleur du texte du placeholder */
     font-size: 0.8rem;
   }
->>>>>>> e5b082e7826cc0cd95dc0f148289aff0cab9f418
