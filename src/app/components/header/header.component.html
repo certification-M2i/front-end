@@ -9,7 +9,7 @@
           class="img-fluid"
         />
       </div>
-      <div class="col-md-8 col-12 text-center">
+      <div class="col-md-8 col-12 text-center search-container">
         <h1 class="m-0">Suika tchat !</h1>
         <div class="d-flex justify-content-center">
           <input
@@ -21,23 +21,21 @@
             (input)="search($event)"
           />
         </div>
+        <div *ngIf="searchResults.length > 0" class="container mt-3 scrollable-list">
+            <ul class="list-group">
+                <li *ngFor="let result of searchResults; let j = index" class="list-group-item pointer-cursor" (click)="scrollToMessage('message-' + searchResults[j].id)">
+                  <h5 class="mb-1">Contenu : {{ result.content }}</h5>
+                  <small>Par : {{ result.username }}</small>
+                  <br>
+                  <small class="text-muted">Le : {{ result.sendingDate }}</small>
+                </li>
+              </ul>
+          </div>
       </div>
       <div class="col-md-2 col-12 text-center text-md-end mt-2 mr-md-2">
         <span class="badge bg-success"
-          >Hello, {{ this.userService.userConnect.username }} ! 🖐️</span
-        >
+          >Hello, {{ this.userService.userConnect.username }} ! 🖐️</span>
       </div>
     </div>
   </div>
 </header>
-
-<div *ngIf="searchResults.length > 0" class="container mt-3">
-    <ul class="list-group">
-        <li *ngFor="let result of searchResults" class="list-group-item">
-            <h5 class="mb-1">Contenu : {{ result.content }}</h5>
-            <small>Par : {{ result.username }}</small>
-            <br>
-            <small class="text-muted">Le : {{ result.sendingDate }}</small>
-        </li>
-    </ul>
-</div>

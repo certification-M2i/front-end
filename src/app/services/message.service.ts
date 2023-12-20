@@ -8,6 +8,8 @@ import { MessagePost } from '../models/MessagePost.model';
 })
 export class MessageService {
 
+  public redirectMessage : boolean = false;
+
   constructor(private fetcher: FetcherService) {
     this.getAllMessages();
    }
