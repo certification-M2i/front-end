@@ -1,5 +1,7 @@
-<div (click)="channelService.getMessageInChannel(channelService.getChannelId())">
-<div *ngFor="let message of this.messageService.messageList; let i = index">
+<!-- <div (click)="channelService.getMessageInChannel(channelService.getChannelId())"> -->
+<div *ngFor="let message of this.channelService.messagesInChannel; let i = index">
+    <p>{{message.sendingDate}}</p>
+    <p>{{message.username}}</p>
     <p>{{message.content}}</p>
 </div>
-</div>
+<!-- </div> -->

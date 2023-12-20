@@ -21,19 +21,20 @@ export class AddMessageComponent {
   content : "",
   sendingDate : "",
   idUser : this.userService.userConnect.id,
-  idChannel : 1,
+  idChannel : 0,
 }
 
   constructor(public messageService:MessageService,public userService:UserService, public channelService:ChannelService) {}
 
   onSubmit(){
     console.log("message envoyé")
+    this.newMessage.idChannel= this.channelService.getChannelId()
     console.log(this.newMessage)
     this.messageService.postMessage(this.newMessage).subscribe(
       (res)=> {
         console.log("message posté")
         console.log(res)
-        this.messageService.getMessage(this.channelService.getChannelId())
+        this.channelService.getMessageInChannel(this.newMessage.idChannel);
       },
       (err)=>{
         console.log(err)
