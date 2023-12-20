@@ -71,7 +71,7 @@ export class FetcherService {
   }
 
   updateChannel(channel: UpdateChannel) {
-    return this.http.put("http://localhost:8080/api/channels/" + channel.id, channel)
+    return this.http.patch("http://localhost:8080/api/channels/" + channel.id, channel)
   }
 
   deleteChannel(id: number) {

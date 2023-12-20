@@ -1,4 +1,5 @@
 <form (ngSubmit)="onSubmit()" #orderForm="ngForm" id="formChannel">
+    <div>
     <div class="form-group">
         <input
           type="text"
@@ -10,5 +11,7 @@
           placeholder="Nom de votre channel"
         />
       </div>
+      <span class="text-warning small" *ngIf="this.errorCreateChannel !== '' ">{{this.errorCreateChannel}}</span>
+    </div>
       <button id="formChannelButton" type="submit" class="btn btn-primary">Créer le channel</button>
 </form>

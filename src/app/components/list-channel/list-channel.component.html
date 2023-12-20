@@ -6,7 +6,8 @@
     <!-- ng-template permet d'avoir un rendu dynamique qui n'est pas rendu immédiatement, ici utilisé avec la directive ngIf. Lorsque ngIf est false, il va rechercher un template qui comporte editMode -->
     <ng-template #editMode>
         <input [(ngModel)]="channel.name" />
-        <button (click)="saveChanges(i, channel)" class="btn btn-primary">Sauvegarder</button>
+        <button (click)="saveChanges(channel)" class="btn btn-primary">Sauvegarder</button>
+        <button (click)="deleteChannel(channel.id)" class="btn btn-danger">Supprimer</button>
         <button (click)="cancelEditing()" class="btn btn-primary">Annuler</button>
     </ng-template>
 </div>
