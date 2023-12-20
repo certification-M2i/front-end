@@ -14,8 +14,9 @@ export class ChannelService {
 
   channelList: GetChannel[] = [];
 
-  getAllChannels() {
-    this.fetcher.getChannels().subscribe((data) => {
+  getAllChannels(username : string) {
+    this.fetcher.getChannels(username).subscribe((data) => {
+      console.log(data)
       this.channelList = data;
     });
   }

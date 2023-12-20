@@ -50,8 +50,8 @@ export class FetcherService {
   }
 
   //***** Channel *****/
-  getChannels() {
-    return this.http.get<GetChannel[]>("http://localhost:8080/api/channels");
+  getChannels(username : string) {
+    return this.http.get<GetChannel[]>(`http://localhost:8080/api/channels?username=${username}`);
   }
 
   getChannelById(id: number) {

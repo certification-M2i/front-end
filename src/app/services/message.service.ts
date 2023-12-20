@@ -14,6 +14,7 @@ export class MessageService {
 
   messageList: MessageGet[] = [];
 
+  
   getAllMessages() {
     this.fetcher.getMessages().subscribe((data) => {
       this.messageList = data;

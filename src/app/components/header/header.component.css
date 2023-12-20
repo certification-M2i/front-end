@@ -1,0 +1,10 @@
+#logoApp{
+    width: 128px;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
