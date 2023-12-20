@@ -31,6 +31,7 @@ export class ChannelService {
     this.fetcher.getChannels(username).subscribe((data) => {
       console.log(data)
       this.channelList = data;
+      this.ordonnerParOrdreCroissant();
     });
   }
 
@@ -62,6 +63,14 @@ export class ChannelService {
 
   removeUserFromChannel(channel:ChannelCreation, user: User) {
     return this.fetcher.removeUserFromChannel(channel, user);
+  }
+
+  // Fonction de tri par ordre alphabétique
+  // FILTRE
+  channelListFiltre: GetChannel[] = [];
+
+  ordonnerParOrdreCroissant() {
+    this.channelListFiltre = this.channelList.sort((a, b) => a.name.localeCompare(b.name));
   }
 }
 
