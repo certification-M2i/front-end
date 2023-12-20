@@ -1,4 +1,4 @@
-<header id="header">
+<header id="header" class="bg-dark p-3 shadow">
     <img id="logoApp" src="../../../assets/logo.png" alt="Logo de l'application représentant une pastèque"/>
     <div>
         <h1>Suika tchat !</h1>
@@ -13,7 +13,11 @@
 
         
     </div>
-    <span>Connecté en tant que : {{ this.userService.userConnect.username }} 🟢</span>
+    <div class="col-md-2 col-12 text-center text-md-end mt-2 mr-md-2">
+        <span class="badge bg-success"
+          >Hello, {{ this.userService.userConnect.username }} ! 🖐️</span
+        >
+      </div>
 </header>
 <div *ngIf="searchResults.length > 0" class="container mt-3">
     <ul class="list-group">
