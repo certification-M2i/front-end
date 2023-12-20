@@ -8,7 +8,20 @@
           id="postChannel"
           name="postChannel"
           placeholder="rechercher un message"
+          (input)="search($event)"
         />
+
+        
     </div>
     <span>Connecté en tant que : {{ this.userService.userConnect.username }} 🟢</span>
 </header>
+<div *ngIf="searchResults.length > 0" class="container mt-3">
+    <ul class="list-group">
+        <li *ngFor="let result of searchResults" class="list-group-item">
+            <h5 class="mb-1">Contenu : {{ result.content }}</h5>
+            <small>Par : {{ result.username }}</small>
+            <br>
+            <small class="text-muted">Le : {{ result.sendingDate }}</small>
+        </li>
+    </ul>
+</div>
