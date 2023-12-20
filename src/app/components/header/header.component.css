@@ -15,9 +15,22 @@
     background-color: transparent;
     border-color: #176e10;
     color: #fff;
-  }
+}
 
-  #postChannel::placeholder {
+#postChannel::placeholder {
     color: #176e10; /* Changer la couleur du texte du placeholder */
     font-size: 0.8rem;
   }
+
+  .itemSearch{
+   cursor: pointer;
+  }
+
+  .itemSearch:hover{
+    background-color: #d6fdd3;
+  }
+
+  .scrollable-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
