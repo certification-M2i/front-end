@@ -1,7 +1,7 @@
 <app-header *ngIf="this.userService.userConnect.username !== ''"></app-header>
 <div *ngIf="this.userService.userConnect.username !== ''">
+    <app-add-channel></app-add-channel>
   <app-list-channel></app-list-channel>
-  <app-add-channel></app-add-channel>
 </div>
 <app-authentification
   *ngIf="this.userService.userConnect.username === ''"

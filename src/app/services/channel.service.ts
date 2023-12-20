@@ -13,7 +13,7 @@ export class ChannelService {
 
   private channelId : number = 0;
 
-  public messagesInChannel : GetMessagesInChannel[] = [] 
+  public messagesInChannel : GetMessagesInChannel[] = []
 
   constructor(private fetcher: FetcherService) { }
 
@@ -65,8 +65,13 @@ export class ChannelService {
     return this.fetcher.removeUserFromChannel(channel, user);
   }
 
-  // Fonction de tri par ordre alphabétique
-  // FILTRE
+
+  searchInMessageChannel(search:string) : GetMessagesInChannel[] {
+    return this.messagesInChannel.filter(message => 
+      message.content.toLocaleLowerCase()
+      .includes(search.toLocaleLowerCase()))
+    }
+
   channelListFiltre: GetChannel[] = [];
 
   ordonnerParOrdreCroissant() {
