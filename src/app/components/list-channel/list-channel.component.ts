@@ -26,6 +26,7 @@ export class ListChannelComponent implements OnInit {
     console.log("avec l'id " + channel.id)
     this.channelService.setChannelId(channel.id)
     console.log(this.channelService.getChannelId())
+    this.channelService.getMessageInChannel(channel.id)
   }
 
 

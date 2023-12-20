@@ -4,6 +4,7 @@ import { ChannelCreation } from '../models/ChannelCreation.model';
 import { GetChannel } from '../models/GetChannel.model';
 import { UpdateChannel } from '../models/UpdateChannel.model';
 import { User } from '../models/User.model';
+import { GetMessagesInChannel } from '../models/GetMessagesInChannel.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ import { User } from '../models/User.model';
 export class ChannelService {
 
   private channelId : number = 0;
+
+  public messagesInChannel : GetMessagesInChannel[] = [] 
 
   constructor(private fetcher: FetcherService) { }
 
@@ -36,7 +39,9 @@ export class ChannelService {
   }
 
   getMessageInChannel(id:number) {
-    return this.fetcher.getMessagesInChannel(id)
+    return this.fetcher.getMessagesInChannel(id).subscribe((data) => {
+      this.messagesInChannel = data;
+    });
   }
 
   postChannel(channel: ChannelCreation) {
