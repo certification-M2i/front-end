@@ -1,16 +1,35 @@
-
-<img src="../../../assets/logo.png" alt="Pastèque">
-<form (ngSubmit)="onSubmit()" #orderForm="ngForm" id="formAuth">
-    <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          id="postUser"
-          required
-          [(ngModel)]="newUser.username"
-          name="postUser"
-          placeholder="Username"
-        />
-      </div>
-      <button id="formAuthButton" type="submit" class="btn btn-primary">S'authentifier</button>
-</form>
+<div class="container-fluid authentification">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 col-sm-8 col-10 text-center">
+      <!-- Colonne centrée pour le logo -->
+      <img src="../../../assets/logo.png" alt="Pastèque" class="img-fluid" />
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-sm-8 col-10">
+      <form (ngSubmit)="onSubmit()" #orderForm="ngForm" id="formAuth">
+        <div class="form-group custom-width mb-2 shadow">
+          <input
+            type="text"
+            class="form-control"
+            id="postUser"
+            required
+            [(ngModel)]="newUser.username"
+            name="postUser"
+            placeholder="Pseudo"
+          />
+        </div>
+        <div class="text-center">
+          <!-- Pour centrer le bouton -->
+          <button
+            id="formAuthButton"
+            type="submit"
+            class="btn btn-authentification shadow"
+          >
+            S'authentifier
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
