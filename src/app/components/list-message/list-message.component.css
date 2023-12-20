@@ -1,0 +1,24 @@
+#message{
+  margin: 10px;
+  padding: 5px;
+  background-color: rgb(253, 225, 225);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  min-height: 130px;
+  width: 60%;
+  word-wrap: break-word;
+  overflow: hidden;
+  padding-left:10px ;
+  padding-right:10px ;
+}
+
+.message-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}

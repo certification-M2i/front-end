@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {ElementRef, Injectable, ViewChild} from '@angular/core';
 import { FetcherService } from './fetcher.service';
 import { ChannelCreation } from '../models/ChannelCreation.model';
 import { GetChannel } from '../models/GetChannel.model';
@@ -18,6 +18,8 @@ export class ChannelService {
   constructor(private fetcher: FetcherService) { }
 
   channelList: GetChannel[] = [];
+
+
 
   setChannelId(id : number){
     this.channelId = id;
@@ -41,7 +43,8 @@ export class ChannelService {
 
   getMessageInChannel(id:number) {
     return this.fetcher.getMessagesInChannel(id).subscribe((data) => {
-      this.messagesInChannel = data;
+      console.log('Messages triés :', this.messagesInChannel);
+      this.messagesInChannel = data.sort((a, b) => a.id - b.id);
     });
   }
 
@@ -64,6 +67,7 @@ export class ChannelService {
   removeUserFromChannel(channel:ChannelCreation, user: User) {
     return this.fetcher.removeUserFromChannel(channel, user);
   }
+
 
 
   searchInMessageChannel(search:string) : GetMessagesInChannel[] {
