@@ -27,7 +27,16 @@ export class UserManagementComponent {
     console.log(this.updateUser)
     if(this.updateUser.username === ""){
       this.updateUserError = "Le pseudo ne peut être vide"
-      return
+      return;
+    }
+    if(this.updateUser.username === this.userService.userConnect.username){
+      this.updateUserError = "Vous ne pouvez pas modifier avec le même pseudo"
+      return;
+    }
+
+    if(this.userService.userList.find(user => user.username === this.updateUser.username)){
+      this.updateUserError = "Vous ne pouvez pas modifier avec un pseudo déjà existant"
+      return;
     }
     this.userService.updateUser(this.updateUser).subscribe(
       (res) => {
