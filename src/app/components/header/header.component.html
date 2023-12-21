@@ -1,4 +1,8 @@
-<header id="header" class="bg-dark p-3 shadow">
+<header
+  id="header"
+  class="bg-dark p-3 shadow"
+  xmlns="http://www.w3.org/1999/html"
+>
   <div class="container-fluid">
     <div class="row align-items-center">
       <div class="col-md-2 col-12 text-center mb-3 mb-md-0">
@@ -21,20 +25,40 @@
             (input)="search($event)"
           />
         </div>
-        <div *ngIf="searchResults.length > 0" class="container mt-3 scrollable-list">
-            <ul class="list-group">
-                <li *ngFor="let result of searchResults; let j = index" class="list-group-item">
-                  <h5 class="mb-1">Contenu : {{ result.content }}</h5>
-                  <small>Par : {{ result.username }}</small>
-                  <br>
-                  <small class="text-muted">Le : {{ result.sendingDate }}</small>
-                </li>
-              </ul>
-          </div>
+        <div
+          *ngIf="searchResults.length > 0"
+          class="container mt-3 scrollable-list"
+        >
+          <ul class="list-group">
+            <li
+              *ngFor="let result of searchResults; let j = index"
+              class="list-group-item"
+            >
+              <h5 class="mb-1">Contenu : {{ result.content }}</h5>
+              <small>Par : {{ result.username }}</small>
+              <br />
+              <small class="text-muted">Le : {{ result.sendingDate }}</small>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="col-md-2 col-12 text-center text-md-end mt-2 mr-md-2">
-        <span class="badge bg-success pointer-cursor" (click)="openModal()">
+        <!-- <span class="badge bg-success pointer-cursor" (click)="openModal()">
           Hello, {{ this.userService.userConnect.username }} ! 🖐️
+        </span> -->
+
+        <div class="badge bg-success d-inline-block">
+          <span class="d-block d-md-inline pointer-cursor" (click)="openModal()">
+            Hello, {{ this.userService.userConnect.username }} ! 🖐️
+          </span>
+        </div>
+        <span class="badge bg-danger d-inline-block logoutButton">
+          <a class="" href="#" (click)="logout()"
+            ><img
+              src="../../../assets/off.png"
+              alt="bouton deconnexion"
+              height="13"
+          /></a>
         </span>
       </div>
     </div>

@@ -36,6 +36,9 @@ export class HeaderComponent {
       this.searchResults = [];
     }
   }
+  logout(){
+    location.reload()
+  }
 
   openModal() {
     this.modalService.open(UserManagementComponent, { size: 'lg' });
