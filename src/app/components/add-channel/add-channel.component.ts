@@ -31,6 +31,9 @@ export class AddChannelComponent {
     if(this.newChannel.name == "Général"){
       this.errorCreateChannel = "Vous ne pouvez pas créer 2 channels Général"
       return
+    } else if (this.newChannel.name == ""){
+      this.errorCreateChannel = "Le nom du channel ne peut pas être vide"
+      return;
     }
     this.channelService.postChannel(this.newChannel).subscribe(
       (res) => {
