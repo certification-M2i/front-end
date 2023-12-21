@@ -33,8 +33,9 @@
           </div>
       </div>
       <div class="col-md-2 col-12 text-center text-md-end mt-2 mr-md-2">
-        <span class="badge bg-success"
-          >Hello, {{ this.userService.userConnect.username }} ! 🖐️</span>
+        <span class="badge bg-success pointer-cursor" (click)="openModal()">
+          Hello, {{ this.userService.userConnect.username }} ! 🖐️
+        </span>
       </div>
     </div>
   </div>
