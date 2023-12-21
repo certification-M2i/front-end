@@ -6,9 +6,9 @@
       <div class="col-lg-3">
         <app-list-channel></app-list-channel>
       </div>
-    </div>
-    <div class="col-lg-9">
-      <app-page-message></app-page-message>
+      <div class="col-lg-9">
+        <app-page-message></app-page-message>
+      </div>
     </div>
   </div>
 </div>
@@ -16,4 +16,6 @@
   *ngIf="this.userService.userConnect.username === ''"
 ></app-authentification>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="footer-container">
+  <app-footer></app-footer>
+</div>

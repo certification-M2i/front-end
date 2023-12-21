@@ -1,14 +1,24 @@
 <form (ngSubmit)="onSubmit()" #orderForm="ngForm" id="formMessage">
-  <div class="form-group">
-    <input
-      type="text"
-      class="form-control"
-      id="postMessage"
-      required
-      [(ngModel)]="newMessage.content"
-      name="postMessage"
-      placeholder="Votre message"
-    />
+  <div class="row align-items-center">
+    <div class="col">
+      <div class="form-group d-flex mb-0">
+        <input
+          type="text"
+          class="form-control me-2"
+          id="postMessage"
+          required
+          [(ngModel)]="newMessage.content"
+          name="postMessage"
+          placeholder="Votre message"
+        />
+        <button
+          id="formMessageButton"
+          type="submit"
+          class="btn btn-success btn-sm"
+        >
+          Envoyer
+        </button>
+      </div>
+    </div>
   </div>
-  <button id="formMessageButton" type="submit" class="btn btn-primary">Envoyer</button>
 </form>

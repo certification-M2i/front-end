@@ -1,25 +1,44 @@
-<div
-  *ngFor="let channel of this.channelService.channelListFiltre; let i = index"
->
-  <div *ngIf="editingIndex !== i; else editMode" class="my-2">
-    <span (click)="evenement(channel)" class="pointer-cursor">
-      #{{ channel.name }}
-    </span>
-    <span
-      *ngIf="channel.name !== 'Général'"
-      (click)="startEditing(i)"
-      class="pointer-cursor me-2"
-    >
-      ✍🏻
-    </span>
+<div class="mt-4 p-3 border rounded">
+  <div
+    *ngFor="let channel of this.channelService.channelListFiltre; let i = index"
+  >
+    <div *ngIf="editingIndex !== i; else editMode" class="my-2">
+      <span (click)="evenement(channel)" class="pointer-cursor">
+        #{{ channel.name }}
+      </span>
+      <span
+        *ngIf="channel.name !== 'Général'"
+        (click)="startEditing(i)"
+        class="pointer-cursor me-2"
+      >
+        <img
+          src="../../../assets/change.png"
+          alt="Crayon pour modifier le nom du canal"
+          height="15"
+        />
+      </span>
+    </div>
+    <!-- ng-template permet d'avoir un rendu dynamique qui n'est pas rendu immédiatement, ici utilisé avec la directive ngIf. Lorsque ngIf est false, il va rechercher un template qui comporte editMode -->
+    <ng-template #editMode>
+      <input [(ngModel)]="channel.name" />
+      <span (click)="saveChanges(channel)" class="pointer-cursor"
+        ><img
+          src="../../../assets/save.png"
+          alt="disquette sauvegarde"
+          id="saveIcon"
+      /></span>
+      <span (click)="deleteChannel(channel.id)" class="pointer-cursor delete"
+        ><img
+          src="../../../assets/bin.png"
+          alt="poubelle pour suppression"
+          id="bin"
+      /></span>
+      <span (click)="cancelEditing()" class="pointer-cursor"
+        ><img
+          src="../../../assets/back.png"
+          alt="retour arrière"
+          id="backArrow"
+      /></span>
+    </ng-template>
   </div>
-  <!-- ng-template permet d'avoir un rendu dynamique qui n'est pas rendu immédiatement, ici utilisé avec la directive ngIf. Lorsque ngIf est false, il va rechercher un template qui comporte editMode -->
-  <ng-template #editMode>
-    <input [(ngModel)]="channel.name" />
-    <span (click)="saveChanges(channel)" class="pointer-cursor">💾</span>
-    <span (click)="deleteChannel(channel.id)" class="pointer-cursor delete"
-      >🗑</span
-    >
-    <span (click)="cancelEditing()" class="pointer-cursor">❌</span>
-  </ng-template>
 </div>

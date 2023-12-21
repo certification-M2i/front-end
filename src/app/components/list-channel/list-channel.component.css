@@ -5,3 +5,16 @@
 .pointer-cursor:hover {
     color: #007bff;
 }
+
+#backArrow {
+    height: 18px;
+}
+
+#bin {
+    height: 19px;
+}
+
+#saveIcon {
+    height: 16px;
+    margin-left: 0.3rem;
+}

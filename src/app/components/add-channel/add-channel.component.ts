@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChannelCreation } from '../../models/ChannelCreation.model';
 import { ChannelService } from '../../services/channel.service';
 import { UserService } from '../../services/user.service';
@@ -8,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-add-channel',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, NgbModule],
   templateUrl: './add-channel.component.html',
   styleUrl: './add-channel.component.css'
 })

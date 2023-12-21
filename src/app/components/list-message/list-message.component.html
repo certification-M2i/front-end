@@ -1,7 +1,13 @@
-<div  #scrollContainer class="message-container">
-  <div id="message" *ngFor="let message of this.channelService.messagesInChannel; let i = index">
-    <p>{{message.sendingDate}}</p>
-    <p>{{message.username}}</p>
-    <p>{{message.content}}</p>
+<div class="message-container border rounded p-3 text-dark" #scrollContainer>
+  <div
+    class="message"
+    *ngFor="let message of channelService.messagesInChannel; let i = index"
+  >
+    <div class="d-flex align-items-center mb-2">
+      <img src="../../../assets/user.png" alt="utilisateur" class="user-logo" />
+      <strong class="text-dark">{{ message.username }}</strong>
+      <span class="ms-2 small text-dark">{{ message.sendingDate }}</span>
+    </div>
+    <p class="fs-6 text-light">{{ message.content }}</p>
   </div>
 </div>
