@@ -19,7 +19,7 @@ export class ListMessageComponent implements OnInit, AfterViewChecked  {
   constructor(public channelService: ChannelService, public messageService: MessageService) {}
   
   ngAfterViewChecked(): void {
-    this.scrollBottomPage();
+      this.scrollBottomPage();
   }
 
   ngOnInit(): void {

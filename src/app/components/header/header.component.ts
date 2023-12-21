@@ -4,11 +4,13 @@ import { ChannelService } from '../../services/channel.service';
 import { FormsModule } from '@angular/forms';
 import { GetMessagesInChannel } from '../../models/GetMessagesInChannel.model';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -17,7 +19,7 @@ export class HeaderComponent {
   public searchMessage : string = "";
   searchResults: GetMessagesInChannel[] = [];
 
-  constructor(public userService : UserService, public channelService : ChannelService){}
+  constructor(public userService : UserService, public channelService : ChannelService, public messageService : MessageService){}
 
 
   search(event: Event): void {

@@ -32,9 +32,10 @@ export class AddMessageComponent {
     console.log(this.newMessage)
     this.messageService.postMessage(this.newMessage).subscribe(
       (res)=> {
-        console.log("message posté")
-        console.log(res)
+        console.log("message posté");
+        console.log(res);
         this.channelService.getMessageInChannel(this.newMessage.idChannel);
+        this.newMessage.content = "";
       },
       (err)=>{
         console.log(err)
