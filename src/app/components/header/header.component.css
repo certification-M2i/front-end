@@ -53,3 +53,7 @@
 .pointer-cursor:hover {
     color: #007bff;
 }
+
+.logoutButton {
+    margin-left: 0.2rem;
+}
