@@ -71,7 +71,7 @@ export class ChannelService {
 
 
   searchInMessageChannel(search:string) : GetMessagesInChannel[] {
-    return this.messagesInChannel.filter(message => 
+    return this.messagesInChannel.filter(message =>
       message.content.toLocaleLowerCase()
       .includes(search.toLocaleLowerCase()))
     }
@@ -80,6 +80,12 @@ export class ChannelService {
 
   ordonnerParOrdreCroissant() {
     this.channelListFiltre = this.channelList.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  setDefaultChannel() {
+    const defaultChannelId = 1;
+    this.setChannelId(defaultChannelId);
+    this.getMessageInChannel(defaultChannelId);
   }
 }
 

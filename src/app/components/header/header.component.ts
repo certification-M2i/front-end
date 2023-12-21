@@ -34,5 +34,8 @@ export class HeaderComponent {
       this.searchResults = [];
     }
   }
+  logout(){
+    location.reload()
+  }
 
 }
