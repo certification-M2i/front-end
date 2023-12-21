@@ -18,13 +18,32 @@ export class UserManagementComponent {
     username : ""
   }
 
+  updateUserError : string = ''
+
   constructor(public userService : UserService){}
 
   onSubmit(){
     this.updateUser.id = this.userService.userConnect.id
     console.log(this.updateUser)
+    if(this.updateUser.username === ""){
+      this.updateUserError = "Le pseudo ne peut être vide"
+      return
+    }
     this.userService.updateUser(this.updateUser).subscribe(
       (res) => {
-        console.log(res)})
+        console.log(res)
+        this.updateUserError = "Pseudo modifié avec succès ! Rechargement dans 5 secondes";
+        
+        let countdown = 5;
+        const intervalId = setInterval(() => {
+          countdown -= 1;
+          this.updateUserError = `Pseudo modifié avec succès ! Rechargement dans ${countdown} secondes`;
+  
+          if (countdown <= 0) {
+            clearInterval(intervalId);
+            location.reload();
+          }
+        }, 1000);
+      })
   }
 }
