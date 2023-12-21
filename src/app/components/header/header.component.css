@@ -18,17 +18,38 @@
 #postChannel::placeholder {
     color: #176e10; /* Changer la couleur du texte du placeholder */
     font-size: 0.8rem;
-  }
+}
 
-  .itemSearch{
-   cursor: pointer;
-  }
+.itemSearch{
+    cursor: pointer;
+}
 
-  .itemSearch:hover{
+.itemSearch:hover{
     background-color: #d6fdd3;
-  }
+}
 
-  .scrollable-list {
+.search-container {
+    position: relative;
+}
+  
+
+.scrollable-list {
+    position: absolute;
+    z-index: 10;
     max-height: 300px;
     overflow-y: auto;
+    width: 100%;
+    top: 100%;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff; 
+    padding: 10px;
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+
+.pointer-cursor:hover {
+    color: #007bff;
 }
