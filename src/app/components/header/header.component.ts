@@ -35,11 +35,4 @@ export class HeaderComponent {
     }
   }
 
-  scrollToMessage(messageId: string) {
-    this.messageService.redirectMessage = true
-    const element = document.getElementById(messageId);
-    console.log(messageId)
-    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
 }

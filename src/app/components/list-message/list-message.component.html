@@ -1,9 +1,7 @@
 <div  #scrollContainer class="message-container">
   <div id="message" *ngFor="let message of this.channelService.messagesInChannel; let i = index">
-    <div id="message-{{message.id}}">
         <p>{{message.sendingDate}}</p>
         <p>{{message.username}}</p>
         <p>{{message.content}}</p>
-    </div>
   </div>
 </div>

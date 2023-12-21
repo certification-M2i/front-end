@@ -23,7 +23,7 @@
         </div>
         <div *ngIf="searchResults.length > 0" class="container mt-3 scrollable-list">
             <ul class="list-group">
-                <li *ngFor="let result of searchResults; let j = index" class="list-group-item pointer-cursor" (click)="scrollToMessage('message-' + searchResults[j].id)">
+                <li *ngFor="let result of searchResults; let j = index" class="list-group-item">
                   <h5 class="mb-1">Contenu : {{ result.content }}</h5>
                   <small>Par : {{ result.username }}</small>
                   <br>
