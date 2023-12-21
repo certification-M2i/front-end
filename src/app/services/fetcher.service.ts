@@ -46,7 +46,7 @@ export class FetcherService {
   }
 
   updateUser(user: User) {
-    return this.http.put("http://localhost:8080/api/users/" + user.id, user)
+    return this.http.put(`http://localhost:8080/api/users/${user.id}?username=${user.username}`, "")
   }
 
   //***** Channel *****/

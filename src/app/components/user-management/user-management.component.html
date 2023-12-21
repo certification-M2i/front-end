@@ -3,13 +3,12 @@
 </div>
 <div class="modal-body">
   <form (ngSubmit)="onSubmit()" #orderForm="ngForm">
-    <input [(ngModel)]="updateUser.username" placeholder="Modifier votre pseudo" />
+    <input type="text" [(ngModel)]="updateUser.username" placeholder="Modifier votre pseudo" name="putUser"/>
     <button
     id="formChannelButton"
     type="submit"
     class="btn btn-light pt-0 pb-0"
     ngbTooltip="Modifier votre pseudo"
-    placement="top"
   >
     <img src="../../../assets/save.png" alt="" height="16" />
   </button>

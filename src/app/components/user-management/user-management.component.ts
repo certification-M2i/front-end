@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/User.model';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-management',
   standalone: true,
-  imports: [FormsModule, NgbModule, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './user-management.component.html',
   styleUrl: './user-management.component.css'
 })
