@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Gestion de l'utilisateur</h4>
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="onSubmit()" #orderForm="ngForm">
+    <input type="text" [(ngModel)]="updateUser.username" placeholder="Modifier votre pseudo" name="putUser"/>
+    <button
+    id="formChannelButton"
+    type="submit"
+    class="btn btn-light pt-0 pb-0"
+    ngbTooltip="Modifier votre pseudo"
+  >
+    <img src="../../../assets/save.png" alt="" height="16" />
+  </button>
+  </form>
+  <span>{{this.updateUserError}}</span>
+</div>
+<div class="modal-footer"></div>

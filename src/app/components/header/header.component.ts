@@ -6,11 +6,13 @@ import { GetMessagesInChannel } from '../../models/GetMessagesInChannel.model';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MessageService } from '../../services/message.service';
+import { UserManagementComponent } from '../user-management/user-management.component';
+import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [FormsModule, CommonModule, RouterLink, UserManagementComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
@@ -19,7 +21,7 @@ export class HeaderComponent {
   public searchMessage : string = "";
   searchResults: GetMessagesInChannel[] = [];
 
-  constructor(public userService : UserService, public channelService : ChannelService, public messageService : MessageService){}
+  constructor(public userService : UserService, public channelService : ChannelService, public messageService : MessageService, private modalService: NgbModal){}
 
 
   search(event: Event): void {
@@ -36,6 +38,10 @@ export class HeaderComponent {
   }
   logout(){
     location.reload()
+  }
+
+  openModal() {
+    this.modalService.open(UserManagementComponent, { size: 'lg' });
   }
 
 }
