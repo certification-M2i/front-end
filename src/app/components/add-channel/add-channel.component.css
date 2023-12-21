@@ -8,12 +8,16 @@
     font-size: 14px;
     padding: 5px 10px;
     margin-left:10px;
-    background-color: #176e10;
+    /* background-color: #176e10;
     border-color: #176e10;
-    color: #fff;
+    color: #fff; */
 }
 
 #postChannel{
     height: 30px; /* Réduit la hauteur de l'input */
     font-size: 14px;
+}
+
+.addChannelContainer {
+    margin-left: 1rem;
 }

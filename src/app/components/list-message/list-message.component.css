@@ -1,4 +1,4 @@
-#message{
+ /* #message{
   margin: 10px;
   padding: 5px;
   background-color: rgb(253, 225, 225);
@@ -13,12 +13,16 @@
   overflow: hidden;
   padding-left:10px ;
   padding-right:10px ;
-}
+} */
 
 .message-container {
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 10px;
+  background: -webkit-linear-gradient(180deg, #74845e,#c87a7a);/* Chrome 10-25, Safari 5.1-6 */                          
+  background: linear-gradient(180deg, #74845e,#c87a7a);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+}
+
+.user-logo {
+  height: 15px;
+  margin-right: 0.2rem;
 }

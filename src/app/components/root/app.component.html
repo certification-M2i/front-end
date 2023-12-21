@@ -1,14 +1,21 @@
 <app-header *ngIf="this.userService.userConnect.username !== ''"></app-header>
 <div *ngIf="this.userService.userConnect.username !== ''">
-    <app-add-channel></app-add-channel>
-    <div class="mainPage">
+  <app-add-channel></app-add-channel>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
         <app-list-channel></app-list-channel>
+      </div>
+      <div class="col-lg-9">
         <app-page-message></app-page-message>
-
+      </div>
     </div>
+  </div>
 </div>
 <app-authentification
   *ngIf="this.userService.userConnect.username === ''"
 ></app-authentification>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="footer-container">
+  <app-footer></app-footer>
+</div>
